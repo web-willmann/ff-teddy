@@ -1,6 +1,6 @@
 <template>
   <v-app dark>
-    <v-app-bar fixed dark color="transparent" flat>
+    <v-app-bar fixed dark flat color="transparent">
       <v-avatar class="mr-4" tile>
         <v-img :src="require('~/assets/teddy_icon.svg')"></v-img>
       </v-avatar>
@@ -33,7 +33,6 @@
     <v-navigation-drawer
       :value="isDrawerShown"
       @input="updateDrawer"
-      absolute
       stateless
       clipped
       right
@@ -59,12 +58,17 @@
     <v-main>
       <nuxt />
     </v-main>
-    <v-footer app>Footer.</v-footer>
+    <Footer />
   </v-app>
 </template>
 
 <script>
+import Footer from '~/components/Footer.vue'
+
 export default {
+  components: {
+    Footer,
+  },
   data: () => {
     return {
       drawer: false,

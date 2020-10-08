@@ -2,7 +2,7 @@
   <div class="banner background-gradient">
     <v-row align="center" justify="center" style="height: 100%">
       <v-col cols="6" class="quote" align="center" justify="center">
-        <p>{{ quote }} | {{ author }}</p>
+        <!-- <p>{{ quote }} | {{ author }}</p> -->
       </v-col>
     </v-row>
   </div>
@@ -24,12 +24,10 @@ export default {
   width: 100%;
 }
 .background-gradient {
-  background: rgb(23, 191, 255);
-  background: linear-gradient(
-    90deg,
-    rgba(23, 191, 255, 1) 0%,
-    rgba(60, 113, 255, 1) 100%
-  );
+  background: rgb(41, 41, 41);
+  background-image: url('~assets/hero-image.jpg');
+  background-position: center;
+  background-size: cover;
 }
 
 .quote,

@@ -1,7 +1,7 @@
 <template>
   <div>
     <h4 class="text-h4 my-6">Auf einen Blick</h4>
-    <v-expansion-panels accordion>
+    <v-expansion-panels accordion focusable>
       <v-expansion-panel>
         <v-expansion-panel-header
           ><span class="d-flex align-center"

@@ -1,7 +1,7 @@
 <template>
   <div>
     <h4 class="text-h4 my-6">Frühförderstelle „Teddybär“</h4>
-    <v-card class="px-6 pt-4" elevation="8" tile>
+    <v-card class="px-6 pt-4" elevation="2" tile>
       <v-row>
         <v-col cols="6">
           <p>
@@ -33,33 +33,28 @@
             hide-delimiter-background
             show-arrows-on-hover
           >
-            <v-carousel-item v-for="(slide, i) in slides" :key="i">
-              <v-sheet :color="colors[i]" height="100%">
-                <v-row class="fill-height" align="center" justify="center">
-                  <div class="display-3">{{ slide }} Slide</div>
-                </v-row>
-              </v-sheet>
+            <v-carousel-item>
+              <v-img :src="require('~/assets/slideshow/1.jpg')" height="100%">
+              </v-img>
+            </v-carousel-item>
+            <v-carousel-item>
+              <v-img :src="require('~/assets/slideshow/2.jpg')" height="100%">
+              </v-img>
+            </v-carousel-item>
+            <v-carousel-item>
+              <v-img :src="require('~/assets/slideshow/3.jpg')" height="100%">
+              </v-img>
+            </v-carousel-item>
+            <v-carousel-item>
+              <v-img :src="require('~/assets/slideshow/4.jpg')" height="100%">
+              </v-img>
+            </v-carousel-item>
+            <v-carousel-item>
+              <v-img :src="require('~/assets/slideshow/5.jpg')" height="100%">
+              </v-img>
             </v-carousel-item>
           </v-carousel>
-        </v-col>
-      </v-row></v-card
-    >
+        </v-col> </v-row
+    ></v-card>
   </div>
 </template>
-
-<script>
-export default {
-  data() {
-    return {
-      colors: [
-        'indigo',
-        'warning',
-        'pink darken-2',
-        'red lighten-1',
-        'deep-purple accent-4',
-      ],
-      slides: ['First', 'Second', 'Third', 'Fourth', 'Fifth'],
-    }
-  },
-}
-</script>

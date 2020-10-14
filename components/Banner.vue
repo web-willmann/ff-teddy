@@ -40,6 +40,4 @@ export default {
 .quote {
   font-size: 2.5rem;
 }
-.author {
-}
 </style>

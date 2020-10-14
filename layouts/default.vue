@@ -1,19 +1,21 @@
 <template>
   <v-app dark>
-    <v-app-bar fixed dark flat color="transparent">
-      <v-avatar class="mr-4" tile>
+    <v-app-bar fixed app>
+      <v-avatar class="mr-4" size="36" tile>
         <v-img :src="require('~/assets/teddy_icon.svg')"></v-img>
       </v-avatar>
       <v-toolbar-title v-text="title" />
       <v-spacer />
-      <span
-        class="d-none d-md-inline"
-        v-for="(item, i) in navLinks"
-        :key="i"
-        :to="item.to"
-      >
-        <v-btn class="ml-4" color="white" light elevation="6" large>
-          <v-icon :color="item.color" left>{{ item.icon }}</v-icon>
+      <span class="d-none d-md-inline" v-for="(item, i) in navLinks" :key="i">
+        <v-btn
+          class="ml-4 white--text"
+          :color="item.color"
+          :to="item.to"
+          light
+          depressed
+          large
+        >
+          <v-icon color="white" left>{{ item.icon }}</v-icon>
           {{ item.title }}
         </v-btn>
       </span>
@@ -30,15 +32,21 @@
         <v-icon>mdi-close</v-icon>
       </v-app-bar-nav-icon>
     </v-app-bar>
-    <v-navigation-drawer
-      :value="isDrawerShown"
-      @input="updateDrawer"
-      stateless
-      clipped
-      right
-      app
-    >
+    <v-main>
+      <nuxt />
+    </v-main>
+    <!-- :value="isDrawerShown"
+    @input="updateDrawer" -->
+    <v-navigation-drawer v-model="drawer" right app>
       <v-list>
+        <v-row class="px-8" align="center">
+          <h6 class="text-h6">Navigation</h6>
+          <v-spacer></v-spacer>
+          <v-btn large @click.stop="drawer = false" icon
+            ><v-icon>mdi-close</v-icon></v-btn
+          >
+        </v-row>
+        <v-divider class="my-2"></v-divider>
         <v-list-item
           v-for="(item, i) in navLinks"
           :key="i"
@@ -55,9 +63,6 @@
         </v-list-item>
       </v-list>
     </v-navigation-drawer>
-    <v-main>
-      <nuxt />
-    </v-main>
     <Footer />
   </v-app>
 </template>
@@ -84,13 +89,13 @@ export default {
           icon: 'mdi-train-car',
           color: 'amber darken-1',
           title: 'Anfahrt',
-          to: '#anfahrt',
+          to: '/#anfahrt',
         },
         {
           icon: 'mdi-mailbox',
           color: 'light-green lighten-1',
           title: 'Kontakt',
-          to: '#kontakt',
+          to: '/#kontakt',
         },
       ],
     }

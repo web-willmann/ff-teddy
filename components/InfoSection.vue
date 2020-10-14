@@ -1,76 +1,10 @@
 <template>
   <div>
-    <h4 class="text-h4 my-6">Auf einen Blick</h4>
     <v-expansion-panels accordion focusable>
       <v-expansion-panel>
         <v-expansion-panel-header
           ><span class="d-flex align-center"
-            ><v-icon color="blue lighten-2" left>mdi-home-variant</v-icon>
-            Unsere Frühförderstelle</span
-          ></v-expansion-panel-header
-        >
-        <v-expansion-panel-content>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-          eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-          minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-          aliquip ex ea commodo consequat.
-        </v-expansion-panel-content>
-      </v-expansion-panel>
-      <v-expansion-panel>
-        <v-expansion-panel-header
-          ><span class="d-flex align-center"
-            ><v-icon color="blue lighten-2" left>mdi-train-car</v-icon>
-            Anfahrt</span
-          ></v-expansion-panel-header
-        >
-        <v-expansion-panel-content>
-          <v-row
-            ><v-col cols="12" md="8" xl="10">
-              <iframe
-                title="Google Maps Navigation"
-                width="100%"
-                height="450rem"
-                id="gmap_canvas"
-                src="https://maps.google.de/maps?q=wiesengrund%202a%2037603%20neuhaus&t=&z=13&ie=UTF8&iwloc=&output=embed"
-                frameborder="0"
-                scrolling="no"
-                marginheight="0"
-                marginwidth="0"
-              ></iframe></v-col
-            ><v-col cols="12" md="4" xl="2">
-              <v-card outlined>
-                <!-- On Desktop Sizes -->
-                <div class="d-none d-md-inline">
-                  <v-img :src="require('~/assets/google-earth.png')"></v-img>
-                  <v-card-title>
-                    <v-icon class="mr-2" color="red lighten-2"
-                      >mdi-map-marker</v-icon
-                    >Adresse</v-card-title
-                  >
-                  <v-card-text>
-                    <b><p>Wiesengrund 2a</p></b>
-                    <p>37603 Holzminden / OT Neuhaus i.S.</p>
-                  </v-card-text>
-                </div>
-                <!-- On Mobile -->
-                <div class="d-flex d-md-none align-center justify-center">
-                  <v-icon class="my-4 mx-6" color="red lighten-2"
-                    >mdi-map-marker</v-icon
-                  >
-                  <b class="my-4 mx-6">Wiesengrund 2a</b>
-                  <span class="my-4 mx-6"
-                    >37603 Holzminden / OT Neuhaus i.S.</span
-                  >
-                </div>
-              </v-card>
-            </v-col></v-row
-          >
-        </v-expansion-panel-content>
-      </v-expansion-panel>
-      <v-expansion-panel>
-        <v-expansion-panel-header
-          ><span class="d-flex align-center"
-            ><v-icon color="orange lighten-2" left>mdi-car-child-seat</v-icon>
+            ><v-icon color="deep-orange lighten-2" left>mdi-car-child-seat</v-icon>
             Was ist heilpädagogische Frühförderung und für wen?</span
           ></v-expansion-panel-header
         >
@@ -152,7 +86,7 @@
       <v-expansion-panel>
         <v-expansion-panel-header
           ><span class="d-flex align-center"
-            ><v-icon color="orange lighten-2" left>mdi-offer</v-icon> Unser
+            ><v-icon color="deep-orange lighten-2" left>mdi-offer</v-icon> Unser
             Leistungsangebot</span
           ></v-expansion-panel-header
         >
@@ -170,7 +104,7 @@
       <v-expansion-panel>
         <v-expansion-panel-header
           ><span class="d-flex align-center"
-            ><v-icon color="orange lighten-2" left>mdi-account-search</v-icon>
+            ><v-icon color="deep-orange lighten-2" left>mdi-account-search</v-icon>
             Unsere Arbeitsweise</span
           ></v-expansion-panel-header
         >
@@ -204,7 +138,7 @@
       <v-expansion-panel>
         <v-expansion-panel-header
           ><span class="d-flex align-center"
-            ><v-icon color="orange lighten-2" left>mdi-account-cash</v-icon>
+            ><v-icon color="deep-orange lighten-2" left>mdi-account-cash</v-icon>
             Finanzierung</span
           ></v-expansion-panel-header
         >
@@ -217,6 +151,57 @@
               Rahmen der Eingliederungshilfe finanziert.
           </p>
           <p><b>Den Familien entstehen keine Kosten.</b></p>
+        </v-expansion-panel-content>
+      </v-expansion-panel>
+      <v-expansion-panel>
+        <v-expansion-panel-header
+          ><span class="d-flex align-center"
+            ><v-icon color="blue lighten-2" left>mdi-train-car</v-icon>
+            Anfahrt</span
+          ></v-expansion-panel-header
+        >
+        <v-expansion-panel-content>
+          <v-row
+            ><v-col cols="12" md="8" xl="10">
+              <iframe
+                title="Google Maps Navigation"
+                width="100%"
+                height="450rem"
+                id="gmap_canvas"
+                src="https://maps.google.de/maps?q=wiesengrund%202a%2037603%20neuhaus&t=&z=13&ie=UTF8&iwloc=&output=embed"
+                frameborder="0"
+                scrolling="no"
+                marginheight="0"
+                marginwidth="0"
+              ></iframe></v-col
+            ><v-col cols="12" md="4" xl="2">
+              <v-card outlined>
+                <!-- On Desktop Sizes -->
+                <div class="d-none d-md-inline">
+                  <v-img :src="require('~/assets/google-earth.png')"></v-img>
+                  <v-card-title>
+                    <v-icon class="mr-2" color="red lighten-2"
+                      >mdi-map-marker</v-icon
+                    >Adresse</v-card-title
+                  >
+                  <v-card-text>
+                    <b><p>Wiesengrund 2a</p></b>
+                    <p>37603 Holzminden / OT Neuhaus i.S.</p>
+                  </v-card-text>
+                </div>
+                <!-- On Mobile -->
+                <div class="d-flex d-md-none align-center justify-center">
+                  <v-icon class="my-4 mx-6" color="red lighten-2"
+                    >mdi-map-marker</v-icon
+                  >
+                  <b class="my-4 mx-6">Wiesengrund 2a</b>
+                  <span class="my-4 mx-6"
+                    >37603 Holzminden / OT Neuhaus i.S.</span
+                  >
+                </div>
+              </v-card>
+            </v-col></v-row
+          >
         </v-expansion-panel-content>
       </v-expansion-panel>
       <v-expansion-panel>
@@ -257,10 +242,13 @@
           ></v-expansion-panel-header
         >
         <v-expansion-panel-content>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-          eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-          minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-          aliquip ex ea commodo consequat.
+          <v-row class="d-flex flex-row justify-center align-center pt-3">
+            <v-img height="213px" style="flex: 152px 0 0" :src="require('~/assets/flyer/Teddy_Flyer_p1.jpg')" contain></v-img>
+            <v-img height="213px" style="flex: 152px 0 0" :src="require('~/assets/flyer/Teddy_Flyer_p2.jpg')" contain></v-img>
+          </v-row>
+          <v-row class="d-flex flex-row justify-center align-center pt-3">
+            <v-btn color="blue white--text" href="/docs/Teddy_Flyer.pdf" target="_blank" depressed>Download</v-btn>
+          </v-row>
         </v-expansion-panel-content>
       </v-expansion-panel>
       <v-expansion-panel>
@@ -271,10 +259,7 @@
           ></v-expansion-panel-header
         >
         <v-expansion-panel-content>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-          eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-          minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-          aliquip ex ea commodo consequat.
+          <v-btn class="mt-4" color="blue white--text" href="/docs/Teddy_Konzept.pdf" target="_blank" block depressed>Konzept.pdf herunterladen</v-btn>
         </v-expansion-panel-content>
       </v-expansion-panel>
     </v-expansion-panels>

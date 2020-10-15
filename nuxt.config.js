@@ -1,6 +1,10 @@
 import colors from 'vuetify/es5/util/colors'
 
 export default {
+  env: {
+    WP_ENDPOINT: 'http://localhost/wp/wp-json'
+  },
+
   // Target (https://go.nuxtjs.dev/config-target)
   target: 'static',
 
@@ -48,12 +52,11 @@ export default {
 
   // Modules for dev and build (recommended) (https://go.nuxtjs.dev/config-modules)
   buildModules: [
-    // https://go.nuxtjs.dev/vuetify
     '@nuxtjs/vuetify',
   ],
 
   // Modules (https://go.nuxtjs.dev/config-modules)
-  modules: ['@nuxt/http'],
+  modules: [],
 
   // Vuetify module configuration (https://go.nuxtjs.dev/config-vuetify)
   vuetify: {

@@ -19,12 +19,26 @@
           cols="12"
           md="6"
         >
-          <v-card>
-            <v-img v-if="post._links['wp:featuredmedia']" :src="post._links['wp:featuredmedia'][0].href"></v-img>
-            <v-card-title v-html="post.title.rendered"></v-card-title>
-            <v-card-text v-html="post.excerpt.rendered"></v-card-text>
-            <v-card-actions></v-card-actions>
-          </v-card>
+          <v-hover>
+            <template v-slot:default="{ hover }">
+              <v-card>
+                <v-img max-height="200px" v-if="mediaExists(post)" :src="mediaOfPost(post).source_url"></v-img>
+                <v-card-title v-html="post.title.rendered"></v-card-title>
+                <v-card-text v-html="post.excerpt.rendered" style="margin-bottom: -24px"></v-card-text>
+                <v-card-text>{{ formatDate(post.date) }}</v-card-text>
+                <!-- Overlay when hovered -->
+                <v-fade-transition>
+                  <v-overlay
+                    v-if="hover"
+                    absolute
+                    color="white"
+                  >
+                    <v-btn color="blue" :to="'/news/post/' + post.id"><v-icon left>mdi-book-open-variant</v-icon>Lesen</v-btn>
+                  </v-overlay>
+                </v-fade-transition>
+              </v-card>
+            </template>
+          </v-hover>
         </v-col>
       </v-row>
     </v-container>
@@ -33,6 +47,11 @@
 
 <script>
 import SectionHeading from '~/components/SectionHeading.vue'
+import WPAPI from 'wpapi'
+import moment from 'moment';
+import 'moment/locale/de';
+
+const wp = new WPAPI({ endpoint: process.env.WP_ENDPOINT });
 
 const postsPerPage = 16
 
@@ -58,27 +77,37 @@ export default {
         postsPerPage * (this.pageNr - 1),
         postsPerPage * this.pageNr
       )
+    }
+  },
+  methods: {
+    mediaOfPost: function (post) {
+      const media = post._embedded['wp:featuredmedia'][0] ?? null
+      return media
     },
+    mediaExists: function (post) {
+      return post._embedded['wp:featuredmedia'] ? true : false
+    },
+    formatDate: function (date) {
+      moment.locale('de')
+      return moment(date).format("[Veröffentlicht am] Do MMMM YYYY");
+    }
   },
   data () {
     return {
-      posts: [],
-      media: {}
+      posts: []
     }
   },
+  fetchOnServer: false,
   async fetch() {
-    this.posts = await this.$http.$get(`http://127.0.0.1/wp/wp-json/wp/v2/posts?page=1&per_page=${postsPerPage}`)
-    // Fetch Preview Images
-    this.posts.forEach((post) => {
-      if (post._links['wp:featuredmedia']) {
-        this.$http.$get(post._links['wp:featuredmedia'][0].href).then((result) => {
-          let newMedia = { ...this.media }
-          newMedia[post.id] = result
-          console.log(newMedia)
-          this.$set(this.media, newMedia)
-        })
+
+    wp.posts().perPage(postsPerPage).page(this.pageNr).embed().get(( err, data ) => {
+      if ( err ) {
+          console.log('ERRRO:', err)
       }
-    })
+      console.log(data)
+      this.posts = data
+    });
+
   },
 }
 </script>

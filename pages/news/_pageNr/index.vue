@@ -53,8 +53,6 @@ import 'moment/locale/de';
 
 const wp = new WPAPI({ endpoint: process.env.WP_ENDPOINT });
 
-const postsPerPage = 16
-
 export default {
   components: {
     SectionHeading,
@@ -74,8 +72,8 @@ export default {
     postsOfThisPage: function () {
       if (this.isLoading) return []
       return this.posts.slice(
-        postsPerPage * (this.pageNr - 1),
-        postsPerPage * this.pageNr
+        process.env.postsPerNewsPage * (this.pageNr - 1),
+        process.env.postsPerNewsPage * this.pageNr
       )
     }
   },
@@ -100,7 +98,7 @@ export default {
   fetchOnServer: false,
   async fetch() {
 
-    wp.posts().perPage(postsPerPage).page(this.pageNr).embed().get(( err, data ) => {
+    wp.posts().perPage(process.env.postsPerNewsPage).page(this.pageNr).embed().get(( err, data ) => {
       if ( err ) {
           console.log('ERRRO:', err)
       }

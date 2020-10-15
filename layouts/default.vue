@@ -1,6 +1,6 @@
 <template>
   <v-app dark>
-    <v-app-bar fixed app>
+    <v-app-bar fixed app style="z-index: 99">
       <v-avatar class="mr-4" size="36" tile>
         <v-img :src="require('~/assets/teddy_icon.svg')"></v-img>
       </v-avatar>

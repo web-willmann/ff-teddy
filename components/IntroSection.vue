@@ -1,6 +1,6 @@
 <template>
-  <v-row class="pa-4" no-gutters>
-    <v-col class="pr-4" cols="12" md="6">
+  <v-row class="pa-4" justify="center" no-gutters>
+    <v-col class="pr-4" cols="12" md="6" xl="4">
       <h4 class="text-h4 my-6">Frühförderstelle „Teddybär“</h4>
       <p>
         Inmitten des Naturparks Solling liegt der Ort Neuhaus. Hier ist die
@@ -24,16 +24,20 @@
         die Frühförderstelle „Teddybär“.
       </p>
     </v-col>
-    <v-col cols="12" md="6">
+    <v-col cols="12" md="6" xl="4">
       <v-carousel
         height="400"
         style="border-radius: 6px"
+        cycle
         hide-delimiter-background
         show-arrows-on-hover
-        cycle
       >
-        <v-carousel-item>
-          <v-img :src="require('~/assets/slideshow/1.jpg')" height="100%" eager>
+        <v-carousel-item v-for="(slide, i) in slideshow" :key="i">
+          <v-img
+            :src="require(`~/assets/slideshow/${slide.file}`)"
+            height="100%"
+            eager
+          >
             <v-chip
               color="white"
               class="ma-2 float-right black--text"
@@ -41,59 +45,7 @@
               dense
             >
               <v-icon left>mdi-selection-search</v-icon>
-              Unser Team
-            </v-chip>
-          </v-img>
-        </v-carousel-item>
-        <v-carousel-item>
-          <v-img :src="require('~/assets/slideshow/2.jpg')" height="100%" eager>
-            <v-chip
-              color="white"
-              class="ma-2 float-right black--text"
-              label
-              dense
-            >
-              <v-icon left>mdi-selection-search</v-icon>
-              Förderräume
-            </v-chip>
-          </v-img>
-        </v-carousel-item>
-        <v-carousel-item>
-          <v-img :src="require('~/assets/slideshow/3.jpg')" height="100%" eager>
-            <v-chip
-              color="white"
-              class="ma-2 float-right black--text"
-              label
-              dense
-            >
-              <v-icon left>mdi-selection-search</v-icon>
-              Außenbereich „Bullerbü“
-            </v-chip>
-          </v-img>
-        </v-carousel-item>
-        <v-carousel-item>
-          <v-img :src="require('~/assets/slideshow/4.jpg')" height="100%" eager>
-            <v-chip
-              color="white"
-              class="ma-2 float-right black--text"
-              label
-              dense
-            >
-              <v-icon left>mdi-selection-search</v-icon>
-              Unser Teddy
-            </v-chip>
-          </v-img>
-        </v-carousel-item>
-        <v-carousel-item>
-          <v-img :src="require('~/assets/slideshow/5.jpg')" height="100%" eager>
-            <v-chip
-              color="white"
-              class="ma-2 float-right black--text"
-              label
-              dense
-            >
-              <v-icon left>mdi-selection-search</v-icon>
-              Förderräume
+              {{ slide.caption }}
             </v-chip>
           </v-img>
         </v-carousel-item>
@@ -157,3 +109,38 @@
     ></v-card> -->
   </v-row>
 </template>
+
+<script>
+export default {
+  data() {
+    return {
+      slideshow: [
+        {
+          file: '1.JPG',
+          caption: 'Unser Team',
+        },
+        {
+          file: '2.JPG',
+          caption: 'Leitspruch',
+        },
+        {
+          file: '3.JPG',
+          caption: 'Förderräume',
+        },
+        {
+          file: '4.JPG',
+          caption: 'Außenbereich „Bullerbü“',
+        },
+        {
+          file: '5.JPG',
+          caption: 'Förderräume',
+        },
+        {
+          file: '6.JPG',
+          caption: 'Unser Teddy',
+        },
+      ],
+    }
+  },
+}
+</script>

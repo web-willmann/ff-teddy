@@ -1,5 +1,13 @@
 <template>
-  <v-app dark>
+  <v-app>
+    <AppBar :drawer="isDrawerShown" @toggleDrawer="toggleDrawer" />
+    <v-main>
+      <nuxt />
+    </v-main>
+    <NavDrawer :isActive="isDrawerShown" @toggleDrawer="toggleDrawer" />
+    <Footer />
+  </v-app>
+  <!-- <v-app dark>
     <v-app-bar fixed app style="z-index: 99">
       <v-avatar class="mr-4" size="36" tile>
         <v-img :src="require('~/assets/teddy_icon.svg')"></v-img>
@@ -37,7 +45,7 @@
     </v-main>
     <!-- :value="isDrawerShown"
     @input="updateDrawer" -->
-    <v-navigation-drawer v-model="drawer" right app>
+  <!-- <v-navigation-drawer v-model="drawer" right app>
       <v-list>
         <v-row class="px-8" align="center">
           <h6 class="text-h6">Navigation</h6>
@@ -64,14 +72,16 @@
       </v-list>
     </v-navigation-drawer>
     <Footer />
-  </v-app>
+  </v-app> -->
 </template>
 
 <script>
+import AppBar from '~/components/layout/AppBar.vue'
 import Footer from '~/components/Footer.vue'
 
 export default {
   components: {
+    AppBar,
     Footer,
   },
   data: () => {
@@ -102,11 +112,11 @@ export default {
   },
   computed: {
     isDrawerShown() {
-      return this.$nuxt.$vuetify.breakpoint.mdAndUp ? false : this.drawer
+      return this.$nuxt.$vuetify.breakpoint.lgAndUp ? true : this.drawer
     },
   },
   methods: {
-    updateDrawer(newState) {
+    toggleDrawer(newState) {
       this.drawer = newState
     },
   },

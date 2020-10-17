@@ -1,1 +1,5 @@
-<!-- Redirect to /news/1 -->
+<template>
+  <script>
+    window.location = '/news/1'
+  </script>
+</template>

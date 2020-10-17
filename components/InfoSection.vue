@@ -1,5 +1,6 @@
 <template>
-  <div>
+  <v-row justify="center">
+    <v-col cols="12" lg="10" xl="8">
     <v-expansion-panels accordion focusable>
       <v-expansion-panel>
         <v-expansion-panel-header
@@ -263,5 +264,6 @@
         </v-expansion-panel-content>
       </v-expansion-panel>
     </v-expansion-panels>
-  </div>
+    </v-col>
+  </v-row>
 </template>

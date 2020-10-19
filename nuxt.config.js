@@ -3,7 +3,7 @@ import colors from 'vuetify/es5/util/colors'
 export default {
   env: {
     WP_ENDPOINT: 'http://localhost/wp/wp-json',
-    postsPerNewsPage: 16,
+    postsPerNewsPage: 10,
   },
 
   // Target (https://go.nuxtjs.dev/config-target)

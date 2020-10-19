@@ -1,21 +1,31 @@
 <template>
-  <div style="background-color: #eaeaea">
-    <v-container v-if="!loading" >
-      <v-row justify="center">
-        <v-col cols="12" md="10" lg="8" xl="6">
-          <v-card class="pa-6" tile>
-            <h1 v-html="post.title.rendered"></h1>
-            <v-chip outlined>{{ formatDate(post.date) }}</v-chip>
-            <div v-html="post.content.rendered"></div>
-          </v-card>
-          <v-row justify="center" align="center">
-            <v-btn class="mt-4" color="grey darken-3 white--text" to="/news/1"
-              >Zurück</v-btn
-            >
+  <div style="background-color: #eaeaea; height: 100%">
+      <v-container
+        class="d-flex align-center justify-center"
+        style="height: 100%"
+        v-if="loading"
+      >
+          <v-progress-circular
+            indeterminate
+            color="indigo darken-2"
+          ></v-progress-circular>
+      </v-container>
+      <v-container v-else >
+          <v-row justify="center">
+            <v-col cols="12" md="10" lg="8" xl="6">
+              <v-card class="pa-6" tile>
+                <h1 v-html="post.title.rendered"></h1>
+                <v-chip outlined>{{ formatDate(post.date) }}</v-chip>
+                <div v-html="post.content.rendered"></div>
+              </v-card>
+              <v-row justify="center" align="center">
+                <v-btn class="mt-4" color="grey darken-3 white--text" to="/news/1"
+                  >Zurück</v-btn
+                >
+              </v-row>
+            </v-col>
           </v-row>
-        </v-col>
-      </v-row>
-    </v-container>
+      </v-container>
   </div>
 </template>
 
@@ -78,7 +88,9 @@ export default {
   flex-wrap: nowrap;
   flex-direction: column;
   justify-content: center;
-  align-items: flex-start;
+  align-items: center;
+  background-color: #ebebec;
+  border-radius: 2px;
 }
 figcaption {
   opacity: 0.6;

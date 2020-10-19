@@ -7,10 +7,10 @@
       <v-toolbar-title v-text="title" />
     </div>
     <v-spacer />
-    <v-btn v-if="this.$route.name == 'news-post-postId'" color="grey darken-3 white--text" @click.stop="$router.go(-1)"
+    <v-btn v-if="this.$route.name == 'news-post-postId'" color="blue-grey lighten-1 white--text" @click.stop="$router.go(-1)" depressed
       >Zurück</v-btn
     >
-    <v-btn v-if="this.$route.name == 'news-pageNr'" color="grey darken-3 white--text" to="/"
+    <v-btn v-if="this.$route.name == 'news-pageNr'" color="blue-grey lighten-1 white--text" to="/" depressed
       >Zurück</v-btn
     >
     <v-app-bar-nav-icon

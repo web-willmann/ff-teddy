@@ -1,21 +1,24 @@
 <template>
-  <v-container v-if="!loading" style="background-color: #eaeaea">
-    <v-row justify="center">
-      <v-col cols="12" md="10" lg="8" xl="6">
-        <v-card class="pa-6" tile>
-          <h1 v-html="post.title.rendered"></h1>
-          <v-chip outlined>{{ formatDate(post.date) }}</v-chip>
-          <div v-html="post.content.rendered"></div>
-        </v-card>
-        <v-row justify="center" align="center">
-          <v-btn class="mt-4" color="blue white--text" to="/news/1"
-            >Zurück</v-btn
-          >
-        </v-row>
-      </v-col>
-    </v-row>
-  </v-container>
+  <div style="background-color: #eaeaea">
+    <v-container v-if="!loading" >
+      <v-row justify="center">
+        <v-col cols="12" md="10" lg="8" xl="6">
+          <v-card class="pa-6" tile>
+            <h1 v-html="post.title.rendered"></h1>
+            <v-chip outlined>{{ formatDate(post.date) }}</v-chip>
+            <div v-html="post.content.rendered"></div>
+          </v-card>
+          <v-row justify="center" align="center">
+            <v-btn class="mt-4" color="blue white--text" to="/news/1"
+              >Zurück</v-btn
+            >
+          </v-row>
+        </v-col>
+      </v-row>
+    </v-container>
+  </div>
 </template>
+
 <script>
 import WPAPI from 'wpapi'
 import moment from 'moment'

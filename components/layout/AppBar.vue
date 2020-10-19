@@ -9,7 +9,7 @@
     <v-spacer />
     <v-app-bar-nav-icon
       v-if="!drawer"
-      @click.stop="$emit('toggleDrawer', true)"
+      @click.stop="$emit('toggle-drawer', true)"
     />
   </v-app-bar>
 </template>

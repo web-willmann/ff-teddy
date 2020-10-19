@@ -13,7 +13,7 @@
       <v-btn
         v-if="!this.$vuetify.breakpoint.lgAndUp"
         large
-        @click.stop="toggleDrawer"
+        @click.stop="isActive = false"
         icon
         ><v-icon>mdi-close</v-icon></v-btn
       >
@@ -40,13 +40,14 @@
 <script>
 export default {
   props: {
-    isActive: {
+    showDrawer: {
       type: Boolean,
       required: true,
     },
   },
   data: () => {
     return {
+      isActive: false,
       title: 'Navigation',
       navLinks: [
         {
@@ -76,10 +77,13 @@ export default {
       ],
     }
   },
-  methods: {
-    toggleDrawer: function () {
-      this.$emit('toggleDrawer', !this.isActive)
+  watch: {
+    showDrawer: function () {
+      this.isActive = this.showDrawer
     },
-  },
+    isActive: function (val) {
+      this.$emit('toggle-drawer', val)
+    }
+  }
 }
 </script>

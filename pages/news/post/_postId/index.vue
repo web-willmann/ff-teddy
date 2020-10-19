@@ -19,7 +19,7 @@
                 <div v-html="post.content.rendered"></div>
               </v-card>
               <v-row justify="center" align="center">
-                <v-btn class="mt-4" color="grey darken-3 white--text" to="/news/1"
+                <v-btn class="mt-4" depressed color="blue-grey white--text" to="/news/1"
                   >Zurück</v-btn
                 >
               </v-row>

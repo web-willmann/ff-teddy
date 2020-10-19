@@ -7,8 +7,15 @@
       <v-toolbar-title v-text="title" />
     </div>
     <v-spacer />
+    <v-btn v-if="this.$route.name == 'news-post-postId'" color="grey darken-3 white--text" @click.stop="$router.go(-1)"
+      >Zurück</v-btn
+    >
+    <v-btn v-if="this.$route.name == 'news-pageNr'" color="grey darken-3 white--text" to="/"
+      >Zurück</v-btn
+    >
     <v-app-bar-nav-icon
       v-if="!drawer"
+      class="ml-2"
       @click.stop="$emit('toggle-drawer', true)"
     />
   </v-app-bar>
@@ -25,6 +32,7 @@ export default {
   data: () => {
     return {
       title: 'Frühförderstelle Teddybär',
+      prevRoute: '',
     }
   },
   methods: {

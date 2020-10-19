@@ -9,7 +9,7 @@
             <div v-html="post.content.rendered"></div>
           </v-card>
           <v-row justify="center" align="center">
-            <v-btn class="mt-4" color="blue white--text" to="/news/1"
+            <v-btn class="mt-4" color="grey darken-3 white--text" to="/news/1"
               >Zurück</v-btn
             >
           </v-row>
@@ -62,7 +62,16 @@ export default {
 </script>
 
 <style lang="scss">
-// @import '~assets/wp_style.scss';
+.wp-block-embed {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.wp-block-embed * {
+  width: 100%;
+}
 .wp-block-image {
   margin: 10px 0;
   display: flex;
@@ -87,8 +96,21 @@ h6,
 p,
 ul,
 ol,
+.wp-block-separator,
+.wp-block-embed,
+.wp-block-image {
+  margin: 15px 0;
+}
 .wp-block-separator {
-  margin: 10px 0;
+  width: 0%;
+  min-width: 20%;
+  max-width: 100%;
+  margin: 20px auto 24px auto;
+  border: none;
+  border-bottom: 4px solid rgb(42, 45, 51);
+  position: relative;
+  transition: box-shadow 200ms ease-in-out;
+  box-shadow: 0px 0px 0px 0px #f9f9f9;
 }
 .wp-block-media-text {
   display: flex;

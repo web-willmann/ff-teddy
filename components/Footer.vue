@@ -41,7 +41,7 @@
             <a class="text-decoration-none" href="">31 109 07 056</a>
           </p>
           <p>
-            <a class="text-decoration-none" to="/datenschutz"
+            <a class="text-decoration-none" href="/datenschutz"
               ><b>Datenschutzerklärung</b></a
             >
           </p>

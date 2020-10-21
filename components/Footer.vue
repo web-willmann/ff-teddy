@@ -38,7 +38,7 @@
           <h5 class="text-h5 mb-4">Sonstiges</h5>
           <p>
             <b>Steuernummer:</b>
-            <a class="text-decoration-none" href="">31 109 07 056</a>
+            <span>31 109 07 056</span>
           </p>
           <p>
             <a class="text-decoration-none" href="/datenschutz"

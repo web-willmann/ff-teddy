@@ -62,18 +62,6 @@ export default {
           title: 'News',
           to: '/news/1',
         },
-        {
-          icon: 'mdi-train-car',
-          color: 'amber darken-1',
-          title: 'Anfahrt',
-          to: '/#anfahrt',
-        },
-        {
-          icon: 'mdi-mailbox',
-          color: 'light-green lighten-1',
-          title: 'Kontakt',
-          to: '/#kontakt',
-        },
       ],
     }
   },

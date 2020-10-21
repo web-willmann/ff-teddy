@@ -12,6 +12,7 @@
     <v-container>
       <LatestNewsSection :latestPost="latestPost" />
     </v-container>
+    <Footer />
   </div>
 </template>
 

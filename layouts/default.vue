@@ -5,7 +5,6 @@
       <nuxt />
     </v-main>
     <NavDrawer :showDrawer="isDrawerShown" @toggle-drawer="toggleDrawer" />
-    <Footer />
   </v-app>
 </template>
 

@@ -1,4 +1,5 @@
 <template>
+<div>
     <v-container>
         
 <p><strong><big>Datenschutzerklärung</big></strong></p>
@@ -30,8 +31,5 @@
 <p>Einzelheiten über Google Web Fonts finden Sie unter: <a href="https://www.google.com/fonts#AboutPlace:about">https://www.google.com/fonts#AboutPlace:about</a> und weitere Informationen in den Datenschutzbestimmungen von Google: <a href="https://policies.google.com/privacy/partners?hl=de">https://policies.google.com/privacy/partners?hl=de</a></p>
             <p><small>Quelle: Datenschutz-Konfigurator von <a href="http://www.mein-datenschutzbeauftragter.de" target="_blank">mein-datenschutzbeauftragter.de</a></small></p>
     </v-container>
+    <Footer /></div>
 </template>
-
-<style scoped>
-
-</style>

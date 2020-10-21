@@ -81,6 +81,7 @@
           </v-btn>
       </v-row>
     </v-container>
+    <Footer />
   </div>
 </template>
 

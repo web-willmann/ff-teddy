@@ -1,10 +1,23 @@
 <template>
   <v-app>
-    <AppBar :drawer="isDrawerShown" @toggle-drawer="toggleDrawer" />
+    <!-- <AppBar :drawer="isDrawerShown" @toggle-drawer="toggleDrawer" /> -->
     <v-main>
       <nuxt />
     </v-main>
     <NavDrawer :showDrawer="isDrawerShown" @toggle-drawer="toggleDrawer" />
+    <v-btn
+      @click.stop="toggleDrawer"
+      class="blue--text"
+      color="white"
+      elevation="2"
+      rounded
+      fixed
+      top
+      right
+    >
+      Navigation
+      <v-icon right>mdi-menu</v-icon>
+    </v-btn>
   </v-app>
 </template>
 

@@ -59,6 +59,14 @@ export default {
   // Vuetify module configuration (https://go.nuxtjs.dev/config-vuetify)
   vuetify: {
     customVariables: ['~/assets/variables.scss'],
+    theme: {
+      themes: {
+        light: {
+          primary: '#e98b84',
+          secondary: '#BA3F59',
+        }
+      }
+    }
   },
 
   // Build Configuration (https://go.nuxtjs.dev/config-build)

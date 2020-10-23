@@ -7,9 +7,10 @@
     <NavDrawer :showDrawer="isDrawerShown" @toggle-drawer="toggleDrawer" />
     <v-btn
       @click.stop="toggleDrawer"
-      class="blue--text"
+      class="secondary--text ma-8"
       color="white"
       elevation="2"
+      large
       rounded
       fixed
       top

@@ -1,13 +1,11 @@
 <template>
   <div>
-    <SectionHeading color="blue" noMargin
-      >Willkommen auf unserer Homepage!</SectionHeading
-    >
-    <IntroSection />
-    <SectionHeading color="blue-grey lighten-2">Auf einen Blick</SectionHeading>
-    <v-container>
-      <InfoSection />
-    </v-container>
+    <HeroBanner />
+    <QuoteSection />
+    <v-divider />
+    <SectionHeading>Unser Angebot</SectionHeading>
+    <InfoSection />
+    <v-divider />
     <SectionHeading color="blue-grey lighten-2">Aktuelles</SectionHeading>
     <v-container>
       <LatestNewsSection :latestPost="latestPost" />
@@ -18,16 +16,18 @@
 
 <script>
 import Banner from '~/components/Banner.vue'
-import IntroSection from '~/components/IntroSection.vue'
+import HeroBanner from '~/components/HeroBanner.vue'
 import InfoSection from '~/components/InfoSection.vue'
+import QuoteSection from '~/components/QuoteSection.vue'
 import LatestNewsSection from '~/components/LatestNewsSection.vue'
 import SectionHeading from '~/components/SectionHeading.vue'
 
 export default {
   components: {
     Banner,
-    IntroSection,
+    HeroBanner,
     InfoSection,
+    QuoteSection,
     LatestNewsSection,
     SectionHeading,
   },
